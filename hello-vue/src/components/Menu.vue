@@ -1,9 +1,24 @@
 <template>
-  <div>Menu</div>
+  <div>
+    Menu
+    <Box color="blue" />
+    <Box color="purple" />
+    <Box color="blue" />
+    <Box color="green" />
+    <Box color="blue" />
+    <Box color="purple" />
+    <Box />
+  </div>
 </template>
 
 <script>
-export default {};
+import Box from './Box.vue';
+
+export default {
+  components: {
+    Box,
+  },
+};
 </script>
 
 <style scoped>

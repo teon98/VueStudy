@@ -9,13 +9,6 @@
       <Content />
     </div>
   </div>
-  <Box color="blue" />
-  <Box color="purple" />
-  <Box color="blue" />
-  <Box color="green" />
-  <Box color="blue" />
-  <Box color="purple" />
-  <Box />
 </template>
 
 <script>
@@ -23,7 +16,6 @@
 import Header from './components/Header.vue';
 import Menu from './components/Menu.vue';
 import Content from './components/Content.vue';
-import Box from './components/Box.vue';
 
 export default {
   name: 'app',
@@ -32,7 +24,6 @@ export default {
     Header,
     Menu,
     Content,
-    Box,
   },
 };
 </script>
