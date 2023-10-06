@@ -1,11 +1,18 @@
 <template>
-  <div>Header</div>
-  <div v-bind:style="{color: #ebebeb}"></div>
-  <div></div>
+  <div
+    v-bind:style="{
+      width: width + 'px',
+      height: height + 'px',
+    }"
+    v-bind:class="['box', color]"
+  ></div>
 </template>
 
 <script>
 export default {
+  props: {
+    color: { type: String, default: '' },
+  },
   data() {
     // Box 의 state
     return {
@@ -16,4 +23,17 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.box {
+  border: 1px solid #000000;
+}
+.blue {
+  background: #009bff;
+}
+.purple {
+  background: #8f46ff;
+}
+.green {
+  background: #00bcac;
+}
+</style>
