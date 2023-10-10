@@ -35,7 +35,28 @@
       <Menu />
       <Content />
     </div>
+    <h2>성별</h2>
+    <input type="radio" id="male" value="male" v-model="gender" />
+    <label for="male">남</label>
+    <br />
+    <input type="radio" id="female" value="female" v-model="gender" />
+    <label for="female">여</label>
+    <br />
+    <span>당신의 성별을 알려주세요: {{ gender }}</span>
+    <h2>선호 장르</h2>
+    <select v-model="category">
+      <option disabled value>선택해주세요</option>
+      <option>로맨스</option>
+      <option>호러</option>
+      <option>스릴러</option>
+    </select>
+    <span>선택: {{ category }}</span>
   </div>
+  <input v-model="firstname" />
+  <input v-model="lastname" />
+
+  <h2>{{ fullname }}</h2>
+  <span></span>
 </template>
 
 <script>
@@ -56,7 +77,20 @@ export default {
     return {
       title: '',
       checkedWebtoons: [],
+      gender: '',
+      category: '',
+      firstname: '',
+      lastname: '',
+      fullname: '',
     };
+  },
+  watch: {
+    firstname(val) {
+      this.fullname = `${val} ${this.lastname}`;
+    },
+    lastname(val) {
+      this.fullname = `${this.firstname} ${val}`;
+    },
   },
 };
 </script>
